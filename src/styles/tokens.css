@@ -1,0 +1,94 @@
+:root {
+  --bg: #0f1720;
+  --bg-raise: #131d28;
+  --panel: #17212c;
+  --panel-alt: #1c2836;
+  --line: #263341;
+  --line-soft: #1e2a37;
+
+  --text: #e7eaee;
+  --text-dim: #aab3c0;
+  --muted: #7c8798;
+
+  --ok: #52d1c3;
+  --ok-dim: #2c5a54;
+  --warn: #f2a93b;
+  --warn-dim: #5a4322;
+  --link: #7ea6f2;
+
+  --font-head: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --rail-w: 88px;
+  --content-max: 760px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+  color: var(--text-dim);
+  max-width: 62ch;
+}
+
+a {
+  color: var(--link);
+}
+
+::selection {
+  background: var(--ok-dim);
+  color: var(--text);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ok);
+  outline-offset: 3px;
+}
